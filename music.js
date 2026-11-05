@@ -37,7 +37,7 @@
     if (audio.paused) play();
     else { clearInterval(fade); audio.pause(); }
   });
-  audio.addEventListener('ended', () => { audio.currentTime = 0; play(); });
+  audio.addEventListener('waiting', () => { toggle.title = '音乐缓冲中，可稍后点击继续'; });
   audio.addEventListener('play', sync);
   audio.addEventListener('pause', sync);
 })();
